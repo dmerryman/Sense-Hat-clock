@@ -30,41 +30,15 @@ minutes = {
     18: (2, 7),
     19: (3, 7),
     }
-def getPixelsForInitialTime(dt):
-    hours = dt.hour
-    minutes = int(dt.minute * 2 / 3)
-    seconds = int(dt.second * 2 / 3)
-    r = red
-    g = green
-    b = blue
-    c = clear 
-    pixels = []
-    for x in range(0, hours):
-        pixels.append(r)
-    for x in range (hours, 24):
-        pixels.append(c)
-
-    for x in range (0, 40):
-        if (x >= 0 and x < 4) or (x >= 8 and x < 12) or (x >= 16 and x < 20) or (x >= 24 and x < 28) or (x >= 32 and x < 36):
-            if x <= minutes:
-                pixels.append(g)
-            else:
-                pixels.append(c)
-        if (x >= 4 and x < 8) or (x >= 12 and x < 16) or (x >= 20 and x < 24) or (x >= 28 and x < 32) or (x >= 36 and x < 40): 
-            if x <= seconds:
-                pixels.append(b)
-            else:
-                pixels.append(c)
-    return pixels
-
+#comment
 def getPixelsForTime(dt):
     hours = dt.hour
     minutes = int(dt.minute / 3)
     seconds = int(dt.second / 3)
     pixels = []
-    for x in range (0, hours):
+    for x in range (0, hours + 1):
         pixels.append(red)
-    for x in range (hours, 24):
+    for x in range (hours + 1, 24):
         pixels.append(clear)
     for x in range (0, 40):
         if (x >= 0 and x < 4) or (x >= 8 and x < 12) or (x >= 16 and x < 20) or (x >= 24 and x < 28) or (x >= 32 and x < 36):
